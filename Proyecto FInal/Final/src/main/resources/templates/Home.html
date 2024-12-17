@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Tablon de anuncios</h1>
+            <div th:if="${showAd}">
+        <p>Bienvenidos!!</p>
+        
+    </div>
+        </div>
+         <div>
+        <ul>
+            <!-- Iterar sobre los anuncios -->
+            <li th:each="anuncio : ${anuncios}">
+                <!-- Mostrar solo el nombre y el asunto -->
+                <div>
+                    <a th:href="@{/anuncio/{id}(id=${anuncio.id})}" class="cursor-pointer">
+                    <p th:text="${anuncio.nombre + ' ' + anuncio.asunto}" class="cursor-pointer" ></p>
+                    </a><!-- Aqui hago Cosas --> 
+                </div>
+                
+            </li>
+        </ul>
+    </div>
+  
+        <p><a th:href="@{/new}">Nuevo Anuncio</a></p>
+        
+        
+    </body>
+</html>

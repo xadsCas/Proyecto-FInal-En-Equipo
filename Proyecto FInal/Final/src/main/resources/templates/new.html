@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Crear Anuncio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Crear Anuncio</h1>
+
+    <!-- Formulario para crear un anuncio -->
+    <form action="Resultado" th:action="@{/new}" th:object="${anuncio}" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" th:field="*{nombre}" required><br><br>
+
+        <label for="asunto">Asunto:</label>
+        <input type="text" id="asunto" th:field="*{asunto}" required><br><br>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" th:field="*{descripcion}" required></textarea><br><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+<form th:action="@{/Home}" method="get">
+    <button type="submit">Página Principal</button>
+</form>
+</body>
+</html>
